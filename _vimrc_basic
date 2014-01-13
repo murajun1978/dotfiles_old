@@ -15,6 +15,9 @@ set smartindent
 
 inoremap <silent> jj <ESC>
 
+" supertab
+let g:SuperTabDefaultCompletionType = "<c-n>"
+
 " vim-move
 let g:move_key_modifier = 'C'
 
