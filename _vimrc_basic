@@ -13,8 +13,6 @@ set softtabstop=2
 set autoindent
 set smartindent
 
-inoremap <silent> jj <ESC>
-
 " supertab
 let g:SuperTabDefaultCompletionType = "<c-n>"
 
