@@ -1,5 +1,5 @@
 syntax on
-set bs=start,indent
+set bs=start,indent,eol
 set laststatus=2
 set number
 set noswapfile
