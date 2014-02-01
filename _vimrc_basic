@@ -1,5 +1,5 @@
-syntax on
 
+syntax on
 set bs=start,indent
 set laststatus=2
 set number
@@ -13,11 +13,29 @@ set softtabstop=2
 set autoindent
 set smartindent
 
+" buffers
+:nmap <C-l> :bnext <CR>
+:nmap <C-h> :bprev <CR>
+
 " supertab
 let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " vim-move
 let g:move_key_modifier = 'C'
+
+" airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#tabline#left_sep = '⮀'
+let g:airline_left_sep='⮀'
+let g:airline_left_alt_sep = '⮁'
+let g:airline_right_sep='⮂'
+let g:airline_right_alt_sep = '⮃'
+let g:airline#extensions#branch#enabled = 1
+let g:airline_branch_prefix = '⭠'
+let g:airline#extensions#readonly#enabled = 1 
+let g:airline#extensions#readonly#symbol = '⭤'
+let g:airline_theme='dark'
 
 " nerdcommenter
 let NERDSpaceDelims = 1
