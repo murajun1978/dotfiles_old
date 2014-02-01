@@ -1,4 +1,3 @@
-
 syntax on
 set bs=start,indent
 set laststatus=2
@@ -48,10 +47,10 @@ nnoremap sub :OverCommandLine<CR>%s/<C-r><C-w>//g<Left><Left>
 nnoremap subp y:OverCommandLine<CR>%s!<C-r>=substitute(@0, '!', '\\!', 'g')<CR>!!gI<Left><Left><Left>
 
 " syntastic
-execute pathogen#infect()
 let g:syntastic_mode_map = { 'mode': 'passive',
             \ 'active_filetypes': ['ruby'] }
 let g:syntastic_ruby_checkers = ['rubocop']
+let g:syntastic_quiet_warnings = 0
 let g:syntastic_quiet_messages = {'level': 'warnings'}
 
 " undo
