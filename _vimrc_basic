@@ -12,6 +12,12 @@ set softtabstop=2
 set autoindent
 set smartindent
 
+" color
+colorscheme molokai
+let g:molokai_original = 1
+let g:rehash256 = 1
+hi LineNr ctermfg=yellow
+
 " buffers
 :nmap <C-l> :bnext <CR>
 :nmap <C-h> :bprev <CR>
