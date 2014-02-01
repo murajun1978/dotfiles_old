@@ -34,7 +34,7 @@ let g:airline#extensions#branch#enabled = 1
 let g:airline_branch_prefix = '⭠'
 let g:airline#extensions#readonly#enabled = 1 
 let g:airline#extensions#readonly#symbol = '⭤'
-let g:airline_theme='dark'
+let g:airline_theme='badwolf'
 
 " nerdcommenter
 let NERDSpaceDelims = 1
