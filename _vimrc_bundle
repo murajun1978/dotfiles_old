@@ -10,6 +10,8 @@ if has('vim_starting')
   call neobundle#rc(bundle_dir)
 endif
 
+NeoBundle 'https://github.com/vim-scripts/AnsiEsc.vim.git'
+NeoBundle 'https://github.com/bling/vim-airline.git'
 NeoBundle 'https://github.com/kana/vim-smartinput.git'
 NeoBundle 'https://github.com/ervandew/supertab.git'
 NeoBundle 'https://github.com/thinca/vim-quickrun.git'
@@ -28,7 +30,6 @@ NeoBundle 'https://github.com/vim-ruby/vim-ruby.git'
 NeoBundle 'https://github.com/tpope/vim-rails.git'
 NeoBundle 'https://github.com/tpope/vim-surround.git'
 NeoBundle 'https://github.com/Shougo/vimshell.vim.git'
-NeoBundle 'https://github.com/bling/vim-airline.git'
 NeoBundle 'https://github.com/Shougo/vimproc.vim.git', {
       \ 'build' : {
       \     'windows' : 'make -f make_mingw32.mak',
