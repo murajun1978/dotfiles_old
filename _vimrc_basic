@@ -64,6 +64,9 @@ let g:airline#extensions#readonly#enabled = 1
 let g:airline#extensions#readonly#symbol = '⭤'
 let g:airline_theme='badwolf'
 
+" ctags
+nnoremap <C-]> g<C-]>
+
 " nerdcommenter
 let NERDSpaceDelims = 1
 nmap <C-t> <Plug>NERDCommenterToggle
