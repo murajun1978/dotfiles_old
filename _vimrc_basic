@@ -44,6 +44,12 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 " vim-move
 let g:move_key_modifier = 'C'
 
+" multiple cursors
+let g:multi_cursor_next_key='<C-n>'
+let g:multi_cursor_prev_key='<C-p>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
+
 " airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#branch#enabled = 1
