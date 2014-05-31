@@ -10,6 +10,7 @@ if has('vim_starting')
   call neobundle#rc(bundle_dir)
 endif
 
+NeoBundle 'https://github.com/coderifous/textobj-word-column.vim.git'
 NeoBundle 'https://github.com/LeafCage/yankround.vim.git'
 NeoBundle 'https://github.com/godlygeek/tabular.git'
 NeoBundle 'https://github.com/terryma/vim-multiple-cursors.git'
