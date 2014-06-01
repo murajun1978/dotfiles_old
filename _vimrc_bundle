@@ -11,6 +11,15 @@ if has('vim_starting')
 endif
 
 NeoBundle 'https://github.com/kana/vim-submode.git'
+call submode#enter_with('bufmove', 'n', '', 's>', '<C-w>>')
+call submode#enter_with('bufmove', 'n', '', 's<', '<C-w><')
+call submode#enter_with('bufmove', 'n', '', 's+', '<C-w>+')
+call submode#enter_with('bufmove', 'n', '', 's-', '<C-w>-')
+call submode#map('bufmove', 'n', '', '>', '<C-w>>')
+call submode#map('bufmove', 'n', '', '<', '<C-w><')
+call submode#map('bufmove', 'n', '', '+', '<C-w>+')
+call submode#map('bufmove', 'n', '', '-', '<C-w>-')
+
 NeoBundle 'https://github.com/coderifous/textobj-word-column.vim.git'
 NeoBundle 'https://github.com/LeafCage/yankround.vim.git'
 NeoBundle 'https://github.com/godlygeek/tabular.git'
