@@ -80,6 +80,12 @@ let g:multi_cursor_quit_key='<Esc>'
 let g:yankround_max_history = 50
 nnoremap <silent>y<C-p> :<C-u>CtrlPYankRound<CR>
 
+" VimShellPop
+nnoremap <Leader>vs :VimShellPop<CR>
+
+" Tabularize
+map <Leader>t :Tabularize 
+
 " airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#branch#enabled = 1
