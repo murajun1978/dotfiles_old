@@ -84,7 +84,12 @@ nnoremap <silent>y<C-p> :<C-u>CtrlPYankRound<CR>
 nnoremap <Leader>vs :VimShellPop<CR>
 
 " Tabularize
-map <Leader>t :Tabularize 
+nnoremap <silent> <Leader>a= :Tabularize /=<CR>
+vnoremap <silent> <Leader>a= :Tabularize /=<CR>
+nnoremap <silent> <Leader>a: :Tabularize /:\zs<CR>
+vnoremap <silent> <Leader>a: :Tabularize /:\zs<CR>
+nnoremap <Leader>a :Tabularize /
+vnoremap <Leader>a :Tabularize /
 
 " airline
 let g:airline#extensions#tabline#enabled = 1
