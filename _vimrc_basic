@@ -5,6 +5,7 @@ set laststatus=2
 set number
 set noswapfile
 set cursorline
+set hlsearch
 
 set expandtab
 set tabstop=2
