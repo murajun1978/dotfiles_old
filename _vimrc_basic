@@ -65,6 +65,9 @@ set clipboard=unnamed
 :nmap <C-l> :bnext <CR>
 :nmap <C-h> :bprev <CR>
 
+" remove spaces
+autocmd BufWritePre * :%s/\s\+$//e
+
 " supertab
 let g:SuperTabDefaultCompletionType = "<c-n>"
 
