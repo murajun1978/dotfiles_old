@@ -51,7 +51,7 @@ let mapleader=","
 
 " color
 let g:hybrid_use_iTerm_colors = 1
-colorscheme hybrid 
+colorscheme hybrid
 let g:rehash256 = 1
 
 " beep
@@ -80,7 +80,7 @@ let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
-" yankround 
+" yankround
 let g:yankround_max_history = 50
 nnoremap <silent>y<C-p> :<C-u>CtrlPYankRound<CR>
 
@@ -105,17 +105,18 @@ let g:airline_right_sep='⮂'
 let g:airline_right_alt_sep = '⮃'
 let g:airline#extensions#branch#enabled = 1
 let g:airline_branch_prefix = '⭠'
-let g:airline#extensions#readonly#enabled = 1 
+let g:airline#extensions#readonly#enabled = 1
 let g:airline#extensions#readonly#symbol = '⭤'
 let g:airline_theme='badwolf'
 
 " ctags
 nnoremap <C-]> g<C-]>
+nnoremap w<C-]> <C-w><C-]>
 
 " nerdcommenter
 let NERDSpaceDelims = 1
-nmap <C-t> <Plug>NERDCommenterToggle
-vmap <C-t> <Plug>NERDCommenterToggle
+nmap <C-o> <Plug>NERDCommenterToggle
+vmap <C-o> <Plug>NERDCommenterToggle
 
 " over vim
 nnoremap <silent> <Leader>m :OverCommandLine<CR>
@@ -206,8 +207,8 @@ endfunction
 
 function! MyFilename()
   return ('' != MyReadonly() ? MyReadonly() . ' ' : '') .
-    \ (&ft == 'vimfiler' ? vimfiler#get_status_string() : 
-    \  &ft == 'unite' ? unite#get_status_string() : 
+    \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
+    \  &ft == 'unite' ? unite#get_status_string() :
     \  &ft == 'vimshell' ? vimshell#get_status_string() :
     \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
     \ ('' != MyModified() ? ' ' . MyModified() : '')
