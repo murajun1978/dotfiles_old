@@ -16,6 +16,7 @@ set smartindent
 set guioptions-=L
 set guioptions-=T
 set listchars=tab:▸\ ,extends:❯,precedes:❮
+set modifiable
 
 " ESC keymap
 inoremap jk <ESC>
@@ -51,7 +52,7 @@ let mapleader=","
 
 " color
 let g:hybrid_use_iTerm_colors = 1
-colorscheme hybrid 
+colorscheme hybrid
 let g:rehash256 = 1
 
 " beep
@@ -80,7 +81,7 @@ let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
-" yankround 
+" yankround
 let g:yankround_max_history = 50
 nnoremap <silent>y<C-p> :<C-u>CtrlPYankRound<CR>
 
@@ -105,7 +106,7 @@ let g:airline_right_sep='⮂'
 let g:airline_right_alt_sep = '⮃'
 let g:airline#extensions#branch#enabled = 1
 let g:airline_branch_prefix = '⭠'
-let g:airline#extensions#readonly#enabled = 1 
+let g:airline#extensions#readonly#enabled = 1
 let g:airline#extensions#readonly#symbol = '⭤'
 let g:airline_theme='badwolf'
 
@@ -140,6 +141,9 @@ let g:syntastic_mode_map = { 'mode': 'passive',
             \ 'active_filetypes': ['ruby'] }
 let g:syntastic_ruby_checkers = ['rubocop']
 let g:syntastic_quiet_messages = {'level': 'warnings'}
+
+" rubocop
+let g:vimrubocop_rubocop_cmd = 'rubocop app -R'
 
 " quick run for rspec
 set splitbelow
@@ -206,8 +210,8 @@ endfunction
 
 function! MyFilename()
   return ('' != MyReadonly() ? MyReadonly() . ' ' : '') .
-    \ (&ft == 'vimfiler' ? vimfiler#get_status_string() : 
-    \  &ft == 'unite' ? unite#get_status_string() : 
+    \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
+    \  &ft == 'unite' ? unite#get_status_string() :
     \  &ft == 'vimshell' ? vimshell#get_status_string() :
     \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
     \ ('' != MyModified() ? ' ' . MyModified() : '')
