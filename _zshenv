@@ -80,8 +80,10 @@ export PATH="/usr/local/bin:/usr/bin:$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init - zsh)"
 
 # alias
+alias git=hub
 alias rn='rails new . -T -B'
 alias gi='git-issue'
+alias grd='guard --no-bundler-warning'
 alias -s rb=ruby
 
 # git-issue percol git-flow
@@ -101,7 +103,7 @@ if exists percol; then
       echo "Loading..."
       TICKET=$(git-issue --no-color list | percol | sed -e 's/^#\([0-9]*\).*/\1/')
       BUFFER="git flow feature start id/$TICKET"
-      CURSOR=$#BUFFER}
+      CURSOR=$#BUFFER
       zle -R -c
     else
       echo "issue.typeが設定されてません"
@@ -109,6 +111,7 @@ if exists percol; then
       zle reset-prompt
     fi
   }
+
   function percol_select_from_git_issue_list_to_finish_ticket() {
     if $(is_issued) ; then
       echo "Loading..."
@@ -118,10 +121,11 @@ if exists percol; then
       zle -R -c
     else
       echo "issue.typeが設定されてません"
-      echo 
-      zle reset-prompt  
+      echo
+      zle reset-prompt
     fi
   }
+
   function percol_select_from_git_issue() {
     if $(is_issued) ; then
       echo "Loading..."
@@ -129,7 +133,7 @@ if exists percol; then
       git-issue show $TICKET
     else
       echo "issue.typeが設定されてません"
-      echo 
+      echo
       zle reset-prompt
     fi
   }

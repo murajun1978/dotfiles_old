@@ -112,11 +112,12 @@ let g:airline_theme='badwolf'
 
 " ctags
 nnoremap <C-]> g<C-]>
+nnoremap w<C-]> <C-w><C-]>
 
 " nerdcommenter
 let NERDSpaceDelims = 1
-nmap <C-t> <Plug>NERDCommenterToggle
-vmap <C-t> <Plug>NERDCommenterToggle
+nmap <C-o> <Plug>NERDCommenterToggle
+vmap <C-o> <Plug>NERDCommenterToggle
 
 " over vim
 nnoremap <silent> <Leader>m :OverCommandLine<CR>
