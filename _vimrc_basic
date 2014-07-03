@@ -16,6 +16,7 @@ set smartindent
 set guioptions-=L
 set guioptions-=T
 set listchars=tab:▸\ ,extends:❯,precedes:❮
+set modifiable
 
 " ESC keymap
 inoremap jk <ESC>
@@ -141,6 +142,9 @@ let g:syntastic_mode_map = { 'mode': 'passive',
             \ 'active_filetypes': ['ruby'] }
 let g:syntastic_ruby_checkers = ['rubocop']
 let g:syntastic_quiet_messages = {'level': 'warnings'}
+
+" rubocop
+let g:vimrubocop_rubocop_cmd = 'rubocop app -R'
 
 " quick run for rspec
 set splitbelow
