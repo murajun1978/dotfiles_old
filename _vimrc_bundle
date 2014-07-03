@@ -20,6 +20,7 @@ call submode#map('bufmove', 'n', '', '<', '<C-w><')
 call submode#map('bufmove', 'n', '', '+', '<C-w>+')
 call submode#map('bufmove', 'n', '', '-', '<C-w>-')
 
+NeoBundle 'https://github.com/tpope/vim-repeat.git'
 NeoBundle 'https://github.com/ngmy/vim-rubocop.git'
 NeoBundle 'https://github.com/coderifous/textobj-word-column.vim.git'
 NeoBundle 'https://github.com/LeafCage/yankround.vim.git'
