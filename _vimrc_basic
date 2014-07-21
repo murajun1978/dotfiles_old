@@ -43,10 +43,8 @@ set softtabstop=2
 " 改行時に入力された行の末尾に合わせて次の行のインデントを増減
 set smartindent
 
-set modifiable                  " バッファを変更可能にする
-
-" color設定
-colorscheme jellybeans
+set modifiable                    " バッファを変更可能にする
+colorscheme jellybeans            " colorscheme
 let g:rehash256 = 1               " 256色
 
 let g:yankround_max_history = 50  " やんくの履歴は50個まで
