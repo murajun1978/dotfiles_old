@@ -1,27 +1,63 @@
 syntax on
 
-set bs=start,indent,eol
-set laststatus=2
-set number
-set noswapfile
-set cursorline
-set hlsearch
+" ##################### BASIC SETTING #####################
+let mapleader = ","             " キーマップリーダー
+set scrolloff=5                 " スクロール時の余白
+set textwidth=0                 " 折り返しない
+set nobackup                    " バックアップ取らない
+set autoread                    " 変更あれば読み直し
+set noswapfile                  " スワップファイルはいらない
+set hidden                      " 編集中でも他のファイルを開く
+set bs=start,indent,eol         " バックスペースでなんでも消す
+set vb t_vb=                    " ビープならさない
+set noerrorbells                " エラーメッセージの表示時にビープならさない
+set whichwrap=b,s,h,l,<,>,[,]   " カーソルが行頭、行末で止めない
+set showcmd                     " コマンドをステータス行に表示
+set showmode                    " 現在のモードを表示
+set viminfo='50,<1000,s100,\"50 " viminfoファイルの設定
+set modelines=0                 " モードラインを無効
+set notitle
 
-set expandtab
+set clipboard+=unnamed          " OSのクリップボードを使用
+set clipboard=unnamed           " やんくをクリップボードへ
+
+" ターミナルでマウス使用可能に
+set mouse=a
+set guioptions+=a
+set ttymouse=xterm2
+
+command! Ev edit $MYVIMRC       " vimrcの編集
+command! Rv source $MYVIMRC     " vimrcの反映
+
+set number                      " 行番号表示
+set cursorline                  " カーソルラインを表示
+set laststatus=2                " ウィンドウの末尾から2行目にステータスラインを表示
+set hlsearch                    " 検索結果をハイライト
+set expandtab                   " タブを半角スペースに
+
+" tabをspace2文字に
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
-set autoindent
+
+" 改行時に入力された行の末尾に合わせて次の行のインデントを増減
 set smartindent
-set guioptions-=L
-set guioptions-=T
-set listchars=tab:▸\ ,extends:❯,precedes:❮
-set modifiable
 
-" ESC keymap
-inoremap jk <ESC>
+set modifiable                  " バッファを変更可能にする
 
-" Window keymap
+" color設定
+let g:hybrid_use_iTerm_colors = 1 " itermのカラー設定を適用
+colorscheme hybrid                " hybridに変更
+let g:rehash256 = 1               " 256色
+
+let g:yankround_max_history = 50  " やんくの履歴は50個まで
+
+
+" ##################### NORMAL MODE #####################
+" ESC+ESCで検索ハイライト解除
+nnoremap <Esc><Esc> :noh<CR>
+
+" Winsowの操作キーマップ
 nnoremap s <Nop>
 nnoremap sj <C-w>j
 nnoremap sk <C-w>k
@@ -47,20 +83,22 @@ nnoremap sv :<C-u>vs<CR>
 nnoremap sq :<C-u>q<CR>
 nnoremap sQ :<C-u>bd<CR>
 
-" <Leader>
-let mapleader=","
+" ctagsのキーマップ
+nnoremap <C-]> g<C-]>
+nnoremap w<C-]> <C-w><C-]>
 
-" color
-let g:hybrid_use_iTerm_colors = 1
-colorscheme hybrid
-let g:rehash256 = 1
+" やんくの履歴を表示
+nnoremap <silent>y<C-p> :<C-u>CtrlPYankRound<CR>
 
-" beep
-set visualbell t_vb=
-set noerrorbells
 
-" clipboard
-set clipboard=unnamed
+" ##################### INSERT MODE #####################
+" 挿入モードでCtrl+kを押すとクリップボードの内容を貼り付けられるようにする "
+inoremap <C-p>  <ESC>"*pa
+
+" コンマ入力後にスペース追加
+inoremap , ,<Space>
+
+
 
 " buffers
 :nmap <C-l> :bnext <CR>
@@ -80,10 +118,6 @@ let g:multi_cursor_next_key='<C-n>'
 let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
-
-" yankround
-let g:yankround_max_history = 50
-nnoremap <silent>y<C-p> :<C-u>CtrlPYankRound<CR>
 
 " VimShellPop
 nnoremap <Leader>vs :VimShellPop<CR>
@@ -110,9 +144,6 @@ let g:airline#extensions#readonly#enabled = 1
 let g:airline#extensions#readonly#symbol = '⭤'
 let g:airline_theme='badwolf'
 
-" ctags
-nnoremap <C-]> g<C-]>
-nnoremap w<C-]> <C-w><C-]>
 
 " nerdcommenter
 let NERDSpaceDelims = 1
